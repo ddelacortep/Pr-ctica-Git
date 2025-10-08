@@ -1,11 +1,23 @@
-class Producto {
+/**
+   * Creates an instance of Producto.
+   * @param {*} nombre el nombre del prducto
+   * @param {*} precio el precio del producto
+   * @param {*} cantidad la cantidad total de producto
+   * @memberof Producto
+   */
+  class Producto {
   constructor(nombre, precio, cantidad) {
     this.nombre = nombre;
     this.precio = precio;
     this.cantidad = cantidad;
   }
-
-  calcularTotal() {
+/**
+ *
+ *
+ * @return {*} retorna el preu total comptant la quantitat de productes 
+ * @memberof Producto
+ */
+calcularTotal() {
     return this.precio * this.cantidad;
   }
 }
