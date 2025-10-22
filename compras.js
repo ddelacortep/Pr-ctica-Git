@@ -104,11 +104,6 @@ class Usuario {
   }
 }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> main
 const producto1 = new Producto("Laptop", 1200, 1);
 const producto2 = new Producto("Mouse", 20, 2);
 
