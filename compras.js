@@ -116,4 +116,3 @@ usuario.agregarProductoAlCarrito(producto2);
 
 usuario.finalizarCompra();
 
-//Comentari de proba
