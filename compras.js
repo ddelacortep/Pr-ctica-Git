@@ -11,41 +11,46 @@ class Producto {
 }
 
 /**
- * Clase que representa un carrito de compras.
+ * Representa un carrito de compras que puede contener varios productos.
  */
 class Carrito {
+  /**
+   * Crea una nueva instancia del carrito.
+   * @constructor
+   */
   constructor() {
     /**
-     * Lista de productos agregados al carrito.
-     * @type {Array}
+     * Cada producto debe ser un objeto que implemente el método `calcularTotal()`.
+     * @type {Array<Object>}
      */
     this.productos = [];
   }
 
   /**
    * Agrega un producto al carrito.
-   * @param {*} producto - El producto que se desea agregar.
+   * @param {Object} producto - El producto a agregar.
+   * @param {Function} producto.calcularTotal - Método del producto que retorna su precio total.
    */
   agregarProducto(producto) {
     this.productos.push(producto);
   }
 
   /**
-   * Calcula el total del carrito sumando el total de cada producto.
-   * @returns {number} El total en dinero de todos los productos.
+   * Calcula el total acumulado de todos los productos en el carrito.
+   * @returns {number} El total del carrito (suma de los totales de cada producto).
    */
   calcularTotalCarrito() {
     return this.productos.reduce((total, producto) => total + producto.calcularTotal(), 0);
   }
 
   /**
-   * Vacía todos los productos del carrito.
+   * Vacía completamente el carrito, eliminando todos los productos.
+   * @returns {void}
    */
   vaciarCarrito() {
     this.productos = [];
   }
 }
-
 
 class Usuario {
   constructor(nombre, correo) {
@@ -64,7 +69,6 @@ class Usuario {
     this.carrito.vaciarCarrito();
   }
 }
-
 
 const producto1 = new Producto("Laptop", 1200, 1);
 const producto2 = new Producto("Mouse", 20, 2);
